@@ -1,0 +1,7 @@
+{
+  "name": "NoteTakeApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
