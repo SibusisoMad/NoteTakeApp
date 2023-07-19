@@ -21,11 +21,18 @@ export class NoteService {
     return this.http.post<Note>(`${this.apiUrl}/Note`, note);
   }
 
-  updateNote(id: string, note: Note): Observable<Note> {
-    return this.http.put<Note>(`${this.apiUrl}/Note/${id}`, note);
-  }
-
   deleteNote(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/Note/${id}`);
   }
+
+  getNoteById(id: string): Observable<Note> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Note>(url);
+  }
+
+  updateNote(id: string, note: Note): Observable<Note> {
+    const url = `${this.apiUrl}/api/Note/${id}`;
+    return this.http.put<Note>(url, note);
+  }
 }
+
