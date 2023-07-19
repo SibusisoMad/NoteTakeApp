@@ -1,0 +1,24 @@
+<h1>Note List</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let note of notes">
+      <td>{{ note.title }}</td>
+      <td>{{ note.category }}</td>
+      <td>
+        <a [routerLink]="['/notes/edit', note.id]" class="btn btn-primary">Edit</a>
+        <button (click)="deleteNote(note.id)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button [routerLink]="['/notes/create']" class="btn btn-success">Create New Note</button>
